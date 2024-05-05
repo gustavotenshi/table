@@ -2,378 +2,314 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 
-    <style>
-        h1 {
-            font-size: 3em;
-            font-weight: 300;
-            line-height: 1em;
-            text-align: center;
-            color: white;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .container td {
-            font-weight: normal;
-            font-size: 1em;
-            -webkit-box-shadow: 0 2px 2px -2px #0E1119;
-            -moz-box-shadow: 0 2px 2px -2px #0E1119;
-            box-shadow: 0 2px 2px -2px #0E1119;
-        }
+    h1 {
+      font-size: 3em;
+      font-weight: 300;
+      line-height: 1em;
+      text-align: center;
+      color: white;
+    }
 
-        .container {
-            text-align: left;
-            overflow: hidden;
-            width: 100%;
-            margin: 0 auto;
-            display: table;
-            padding: 0 0 8em 0;
-        }
+    .container .card {
+      font-weight: normal;
+      font-size: 1em;
+      -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+      -moz-box-shadow: 0 2px 2px -2px #0E1119;
+      box-shadow: 0 2px 2px -2px #0E1119;
+    }
 
-        .container td,
-        .container th {
-            padding-bottom: 1.1%;
-            padding-top: 1%;
-            padding-left: 2%;
-        }
+    .container {
+      text-align: left;
+      overflow: hidden;
+      width: 100%;
+      margin: 0 auto;
 
-        /* Background-color of the odd rows */
-        .container tr:nth-child(odd) {
-            background-color: #514E31;
-        }
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 1.5px;
+    }
 
-        /* Background-color of the even rows */
-        .container tr:nth-child(even) {
-            background-color: #514E31;
-        }
+    .container .card {
+      display: flex;
+      align-items: center;
+      height: 48px;
+      width: 100%;
 
-        .container th {
-            background-color: #514E31;
-        }
+      padding-bottom: 1.1%;
+      padding-top: 1%;
+      padding-left: 10%;
+    }
 
-        .container td {
-            color: white;
-        }
+    .card .nomeCheckbox {
+      margin-right: 8px;
+    }
 
-        .container tr:hover {
-            background-color: #514E31;
-            -webkit-box-shadow: 0 6px 6px -6px #0E1119;
-            -moz-box-shadow: 0 6px 6px -6px #0E1119;
-            box-shadow: 0 6px 6px -6px #0E1119;
-        }
+    /* Background-color of the rows */
+    .container .card {
+      background-color: #514E31;
+    }
 
-        .container td:hover {
-            background-color: #D2BD88;
-            color: #403E10;
-            font-weight: bold;
+    .container .card {
+      color: white;
+    }
 
-            box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
-            transform: translate3d(6px, -6px, 0);
+    .container .card:hover {
+      background-color: #D2BD88;
+      color: #403E10;
+      font-weight: bold;
 
-            transition-delay: 0s;
-            transition-duration: 0.4s;
-            transition-property: all;
-            transition-timing-function: line;
-        }
+      box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+      transform: translate3d(6px, -6px, 0);
 
-        .selected-item {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr;
-        }
-    </style>
+      transition-delay: 0s;
+      transition-duration: 0.4s;
+      transition-property: all;
+      transition-timing-function: line;
+    }
+
+    @media (max-width: 764px) {
+      .container {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 674px) {
+      .container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <table class="container">
-        <thead>
-            <!-- Cabeçalho da tabela -->
-        </thead>
-        <tbody>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Aceitação"> Aceitação</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Dar prazer"> Dar prazer</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Guiar"> Guiar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Performance"> Performance</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser imaginativo"> Ser imaginativo</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ajudar"> Ajudar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Derrotar"> Derrotar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Harmonia"> Harmonia</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Perigo"> Perigo</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser o maior"> Ser o maior</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Alegria"> Alegria</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Desafios"> Desafios</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Honestidade"> Honestidade</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Persuadir"> Persuadir</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser o melhor"> Ser o melhor</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Alterar"> Alterar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Descobrir"> Descobrir</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Honrar"> Honrar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Planejar"> Planejar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser o primeiro"> Ser o primeiro</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Aperfeiçoar"> Aperfeiçoar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Desenhar"> Desenhar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Humor"> Humor</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Poder pessoal"> Poder pessoal</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser original"> Ser original</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Apreciação</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Detectar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Iluminar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Predominar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ser parte de comunidade
-                </td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Apreciar esportes</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Devotar-se</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Independência</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Preparar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ser parte de família
-                </td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Aprender</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Discernir</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Influenciar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Pressão</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ser sagrado</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Associar-se</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Divertir-se</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Informar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Prevalecer</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ser superior</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Atrair</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Dominar sua área</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Iniciar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Produtividade</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ser um expert</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Aumentar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Dotar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Inspirar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Prover</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ser um mestre</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Autenticidade</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Educar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Instruir</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Realização</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Servir</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Aventura</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Elegência</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Integrar-se</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Realizar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Sintetizar</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Beleza</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Emocionar-se</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Integridade</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Reconhecimento</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Sucesso</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Brilhar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Emoções fortes </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Intuir</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Reforçar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ter consciência</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Brincar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Empatia </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Inventar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Reinar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ter gosto refinado</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Busca</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Encorajar </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Leveza</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Relação com Deus </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ter impacto
-                </td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Camaradagem</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Encorajar </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Liberdade de escolha</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Relacionar-se </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ter poder</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Carinho</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Ensinar </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Liderança</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Religioso </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Tocar</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Causar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Ensinar </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Liderar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Riscos </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Tradição</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Colaboração</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Entreter-se </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Ligar-se a </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Romance </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Treinar</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Compaixão</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Entusiasmo </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Localizar </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Saúde </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Triunfar</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Completa auto-expressão</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Especulação </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Marcar </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Segurança </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ultrapassar</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Compreender</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Espírito Livre </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Melhorar </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Sem pressão </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Unir</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Comunidade</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Espiritualidade </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Modelar </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Sensibilidade </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Vencer</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Conceber</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Estar Certo </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Montar </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Sensualidade </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Visão</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Confiança</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Estética </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Motivar </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Sentir </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Vitalidade</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Conquistar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Estimular </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Nutrir </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Sentir-se bem </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Viver o presente
-                </td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Conseguir</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Excelência </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> O desconhecido </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Sentir-se conectado </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> OUTROS: (Citar)
-                </td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Construir</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Excitar </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Observar </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Sentir-se energético</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Contribuição</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Experimentar </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Ordem </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Ser apaixonado</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Crescimento</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Experimentar alegria </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Ousadia </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Ser ativo</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Criar</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Explicar </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Paixão </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar"> Ser catalizador</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Criatividade</td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Facilitar </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Participação </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar">Ser conhecido</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Dar apoio </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Foco </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Paz </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar">Ser direto</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Dar poder aos outros </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Detectar"> Governar </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Perceber </td>
-                <td><input type="checkbox" class="nomeCheckbox" value="Predominar">Ser Genuíno</td>
-            </tr>
-            <!-- Adicione mais linhas conforme necessário -->
-        </tbody>
-    </table>
+  <div class="container">
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Aceitação"> Aceitação</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Dar prazer"> Dar prazer</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Guiar"> Guiar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Performance"> Performance</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser imaginativo"> Ser imaginativo</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ajudar"> Ajudar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Derrotar"> Derrotar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Harmonia"> Harmonia</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Perigo"> Perigo</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser o maior"> Ser o maior</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Alegria"> Alegria</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Desafios"> Desafios</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Honestidade"> Honestidade</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Persuadir"> Persuadir</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser o melhor"> Ser o melhor</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Alterar"> Alterar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Descobrir"> Descobrir</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Honrar"> Honrar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Planejar"> Planejar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser o primeiro"> Ser o primeiro</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Aperfeiçoar"> Aperfeiçoar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Desenhar"> Desenhar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Humor"> Humor</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Poder pessoal"> Poder pessoal</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser original"> Ser original</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Apreciação</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Detectar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Iluminar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Predominar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ser parte de
+      comunidade
+    </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Apreciar esportes</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Devotar-se</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Independência</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Preparar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ser parte de família
+    </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Aprender</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Discernir</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Influenciar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Pressão</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ser sagrado</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Associar-se</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Divertir-se</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Informar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Prevalecer</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ser superior</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Atrair</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Dominar sua área</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Iniciar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Produtividade</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ser um expert</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Aumentar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Dotar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Inspirar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Prover</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ser um mestre</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Autenticidade</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Educar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Instruir</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Realização</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Servir</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Aventura</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Elegência</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Integrar-se</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Realizar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Sintetizar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Beleza</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Emocionar-se</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Integridade</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Reconhecimento</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Sucesso</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Brilhar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Emoções fortes </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Intuir</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Reforçar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ter consciência</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Brincar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Empatia </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Inventar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Reinar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ter gosto refinado
+    </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Busca</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Encorajar </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Leveza</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Relação com Deus </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ter impacto
+    </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Camaradagem</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Encorajar </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Liberdade de escolha</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Relacionar-se </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ter poder</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Carinho</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Ensinar </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Liderança</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Religioso </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Tocar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Causar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Ensinar </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Liderar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Riscos </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Tradição</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Colaboração</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Entreter-se </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Ligar-se a </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Romance </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Treinar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Compaixão</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Entusiasmo </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Localizar </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Saúde </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Triunfar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Completa auto-expressão</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Especulação </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Marcar </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Segurança </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Ultrapassar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Compreender</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Espírito Livre </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Melhorar </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Sem pressão </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Unir</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Comunidade</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Espiritualidade </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Modelar </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Sensibilidade </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Vencer</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Conceber</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Estar Certo </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Montar </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Sensualidade </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Visão</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Confiança</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Estética </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Motivar </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Sentir </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Vitalidade</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Conquistar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Estimular </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Nutrir </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Sentir-se bem </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> Viver o presente
+    </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Conseguir</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Excelência </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> O desconhecido </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Sentir-se conectado </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Ser parte de comunidade"> OUTROS: (Citar)
+    </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Construir</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Excitar </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Observar </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Sentir-se energético</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Contribuição</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Experimentar </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Ordem </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Ser apaixonado</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Crescimento</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Experimentar alegria </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Ousadia </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Ser ativo</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Criar</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Explicar </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Paixão </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar"> Ser catalizador</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Criatividade</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Facilitar </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Participação </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar">Ser conhecido</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Dar apoio </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Foco </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Paz </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar">Ser direto</div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Apreciação"> Dar poder aos outros </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Detectar"> Governar </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Iluminar"> Perceber </div>
+    <div class="card"><input type="checkbox" class="nomeCheckbox" value="Predominar">Ser Genuíno</div>
+  </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const checkboxes = document.querySelectorAll('.nomeCheckbox');
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const checkboxes = document.querySelectorAll('.nomeCheckbox');
 
-            checkboxes.forEach(function (checkbox) {
-                checkbox.addEventListener('change', function () {
-                    let selectedCheckboxes = Array.from(checkboxes).filter(cb => cb.checked);
+      checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener('change', function () {
+          let selectedCheckboxes = Array.from(checkboxes).filter(cb => cb.checked);
 
-                    if (selectedCheckboxes.length > 17) {
-                        this.checked = false;
-                    }
+          if (selectedCheckboxes.length > 17) {
+            this.checked = false;
+          }
 
-                    showHideRows(selectedCheckboxes);
-                });
-            });
-
-            function showHideRows(selectedCheckboxes) {
-                checkboxes.forEach(function (cb) {
-                    const row = cb.parentElement;
-                    if (selectedCheckboxes.includes(cb) || selectedCheckboxes.length < 17) {
-                        row.style.display = '';
-                    } else {
-                        row.style.display = 'none';
-                    }
-                });
-            }
+          showHideRows(selectedCheckboxes);
         });
-    </script>
+      });
+
+      function showHideRows(selectedCheckboxes) {
+        checkboxes.forEach(function (cb) {
+          const row = cb.parentElement;
+          if (selectedCheckboxes.includes(cb) || selectedCheckboxes.length < 17) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>
